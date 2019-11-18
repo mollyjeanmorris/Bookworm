@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BookWormModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Books" Relationship="Self.FK_Books_Authors" FromRole="Authors" ToRole="Books" />
+    <NavigationProperty Name="BookSeries" Relationship="Self.FK_BookSeries_Authors" FromRole="Authors" ToRole="BookSeries" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuthorId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StarRating" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="BookSeriesId" Type="Int32" />
+    <Property Name="CoverArt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Author" Relationship="Self.FK_Books_Authors" FromRole="Books" ToRole="Authors" />
+    <NavigationProperty Name="BookSeries" Relationship="Self.FK_Books_BookSeries" FromRole="Books" ToRole="BookSeries" />
+  </EntityType>
+  <EntityType Name="BookSeries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuthorId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Author" Relationship="Self.FK_BookSeries_Authors" FromRole="BookSeries" ToRole="Authors" />
+    <NavigationProperty Name="Books" Relationship="Self.FK_Books_BookSeries" FromRole="BookSeries" ToRole="Books" />
+  </EntityType>
+  <Association Name="FK_Books_Authors">
+    <End Role="Authors" Type="Self.Author" Multiplicity="1" />
+    <End Role="Books" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BookSeries_Authors">
+    <End Role="Authors" Type="Self.Author" Multiplicity="1" />
+    <End Role="BookSeries" Type="BookWormModel.BookSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BookSeries">
+        <PropertyRef Name="AuthorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Books_BookSeries">
+    <End Role="BookSeries" Type="BookWormModel.BookSeries" Multiplicity="0..1" />
+    <End Role="Books" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BookSeries">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="BookSeriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BookWormEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Authors" EntityType="Self.Author" />
+    <EntitySet Name="Books" EntityType="Self.Book" />
+    <EntitySet Name="BookSeries" EntityType="BookWormModel.BookSeries" />
+    <AssociationSet Name="FK_Books_Authors" Association="Self.FK_Books_Authors">
+      <End Role="Authors" EntitySet="Authors" />
+      <End Role="Books" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BookSeries_Authors" Association="Self.FK_BookSeries_Authors">
+      <End Role="Authors" EntitySet="Authors" />
+      <End Role="BookSeries" EntitySet="BookSeries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Books_BookSeries" Association="Self.FK_Books_BookSeries">
+      <End Role="BookSeries" EntitySet="BookSeries" />
+      <End Role="Books" EntitySet="Books" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

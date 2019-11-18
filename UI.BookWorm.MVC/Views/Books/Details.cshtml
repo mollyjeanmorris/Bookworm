@@ -1,0 +1,76 @@
+﻿@model DATA.BookWorm.EF.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+    <div class="container">
+        <h2>@Model.Title Details</h2>
+        <hr />
+
+        <div class="row col-md-12">
+            <div class="pull-left col-md-6">
+                <img src="~/Images/@Model.CoverArt" class="img-responsive center-block details-img" style="max-width: 75%;" />
+                <div class="text-center">
+                    @for (int i = 0; i < Convert.ToInt32(Model.StarRating); i++)
+                    {
+                        <img src="~/Images/star-icon.png" class="img-responsive" style="max-width: 20px;display:inline;" />
+                    }
+                </div>
+            </div>
+            <div class="pull-right col-md-6">
+                <h4 class="details-header">
+                    @Html.DisplayNameFor(model => model.Title)
+                </h4>
+
+                <p>
+                    @Html.DisplayFor(model => model.Title)
+                </p>
+
+                <h4 class="details-header">
+                    @Html.DisplayNameFor(model => model.Description)
+                </h4>
+
+                <p>
+                    @Html.DisplayFor(model => model.Description)
+                </p>
+
+                <h4 class="details-header">
+                    Author
+                </h4>
+
+                <p>
+                    @Html.DisplayFor(model => model.Author.FullName)
+                </p>
+                @if (Model.BookSeries != null)
+                {
+                    <h4 class="details-header">
+                        @Html.DisplayNameFor(model => model.BookSeries.Title)
+                    </h4>
+
+                    <p>
+                        @Html.DisplayFor(model => model.BookSeries.Title)
+                    </p>
+                }
+            </div>
+        </div>
+        <br />
+        <div class="row col-md-12 related-books-div">
+            @if (ViewBag.RelatedBooks.Count != 0)
+            {
+                <div class="related-books-title">If you like @Model.Title, you should check out... </div>
+                foreach (var book in ViewBag.RelatedBooks)
+                {
+                    <div class="related-Books">
+                        <a href="@Url.Action("Details","Books", new { id = book.Id})"><img src="~/Images/@book.CoverArt" class="img-responsive" style="max-width: 100px;" /></a>
+                        <p>@book.Title</p>
+                    </div>
+                }
+            }
+        </div>
+        <div class="row col-md-12">
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+    </div>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATA.BookWorm.EF", "DATA.BookWorm.EF\DATA.BookWorm.EF.csproj", "{A9C9BA45-C606-413F-8FC2-C4B4B9578050}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.BookWorm.MVC", "UI.BookWorm.MVC\UI.BookWorm.MVC.csproj", "{402DB6F8-8404-4350-8A5F-F267FC359DDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A9C9BA45-C606-413F-8FC2-C4B4B9578050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9C9BA45-C606-413F-8FC2-C4B4B9578050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9C9BA45-C606-413F-8FC2-C4B4B9578050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9C9BA45-C606-413F-8FC2-C4B4B9578050}.Release|Any CPU.Build.0 = Release|Any CPU
+		{402DB6F8-8404-4350-8A5F-F267FC359DDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{402DB6F8-8404-4350-8A5F-F267FC359DDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{402DB6F8-8404-4350-8A5F-F267FC359DDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{402DB6F8-8404-4350-8A5F-F267FC359DDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8C59A7C-98A3-4D4E-96E2-F417D35469D0}
+	EndGlobalSection
+EndGlobal

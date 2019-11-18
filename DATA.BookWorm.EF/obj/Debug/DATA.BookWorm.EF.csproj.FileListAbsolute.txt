@@ -1,0 +1,12 @@
+C:\Users\Student\Documents\Visual Studio 2019\Projects\BookWorm\BookWorm\DATA.BookWorm.EF\bin\Debug\DATA.BookWorm.EF.dll.config
+C:\Users\Student\Documents\Visual Studio 2019\Projects\BookWorm\BookWorm\DATA.BookWorm.EF\bin\Debug\DATA.BookWorm.EF.dll
+C:\Users\Student\Documents\Visual Studio 2019\Projects\BookWorm\BookWorm\DATA.BookWorm.EF\bin\Debug\DATA.BookWorm.EF.pdb
+C:\Users\Student\Documents\Visual Studio 2019\Projects\BookWorm\BookWorm\DATA.BookWorm.EF\bin\Debug\EntityFramework.dll
+C:\Users\Student\Documents\Visual Studio 2019\Projects\BookWorm\BookWorm\DATA.BookWorm.EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Student\Documents\Visual Studio 2019\Projects\BookWorm\BookWorm\DATA.BookWorm.EF\bin\Debug\EntityFramework.xml
+C:\Users\Student\Documents\Visual Studio 2019\Projects\BookWorm\BookWorm\DATA.BookWorm.EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Student\Documents\Visual Studio 2019\Projects\BookWorm\BookWorm\DATA.BookWorm.EF\obj\Debug\DATA.BookWorm.EF.csprojAssemblyReference.cache
+C:\Users\Student\Documents\Visual Studio 2019\Projects\BookWorm\BookWorm\DATA.BookWorm.EF\obj\Debug\DATA.BookWorm.EF.csproj.CoreCompileInputs.cache
+C:\Users\Student\Documents\Visual Studio 2019\Projects\BookWorm\BookWorm\DATA.BookWorm.EF\obj\Debug\DATA.BookWorm.EF.csproj.CopyComplete
+C:\Users\Student\Documents\Visual Studio 2019\Projects\BookWorm\BookWorm\DATA.BookWorm.EF\obj\Debug\DATA.BookWorm.EF.dll
+C:\Users\Student\Documents\Visual Studio 2019\Projects\BookWorm\BookWorm\DATA.BookWorm.EF\obj\Debug\DATA.BookWorm.EF.pdb
